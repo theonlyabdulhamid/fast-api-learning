@@ -30,7 +30,6 @@ class UserUpdate(BaseModel):
         le=100
     )
 
-
 class UserCreatedResponse(BaseModel):
     message: str
     user: UserResponse
@@ -85,4 +84,4 @@ def delete_user(user_id: int):
         raise HTTPException(status_code=404, detail="User not found")
     users_db.pop(user_id - 1)
     return "Deleted"
- 
+
